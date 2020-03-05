@@ -9,7 +9,7 @@ function getDogImage(userBreed){
     })
     .then(responseJson =>{
         releasetheHounds(responseJson)})
-        .catch(error => alert('Something went wrong. Check your connection.'));
+        .catch(error => alert('That Breed doesnt exist. Please try a diffrent one.'));
         
     }
    
@@ -18,7 +18,7 @@ function submitButton(){
         event.preventDefault();
         $(".dog-results").empty()
         let userBreed = $(".breedinput").val()
-        userBreed.toLowerCase(userBreed);
+        userBreed= userBreed.toLowerCase();
         console.log(userBreed);
         getDogImage(userBreed);
         console.log("submitButton"); 
